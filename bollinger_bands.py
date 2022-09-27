@@ -1,6 +1,4 @@
-from sqlite3 import DatabaseError
-import numpy as np
-import pandas as pd
+import simple_indicators
 
 def ma(data, lookback, what, where):
     for i in range(len(data)):
@@ -22,7 +20,7 @@ def volatility(data, lookback, what, where):
 def bollinger_bands(data, boll_lookback, standard_distance, what, where):
 
     # calculating mean
-    ma(data, boll_lookback, what, where)
+    simple_indicators.ma(data, boll_lookback, what, where)
 
     #calculating vol
     volatility(data, boll_lookback, what, where + 1)
